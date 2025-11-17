@@ -1,5 +1,7 @@
+"use client"
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function Projects() {
   const projects = [
@@ -60,23 +62,44 @@ export default function Projects() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
-
-
+    <div className="min-h-screen">
       {/* Projects Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+          <motion.h1
+            className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6"
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
             Our Projects
-          </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          </motion.h1>
+          <motion.p
+            className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
             Explore our portfolio of innovative solutions that have transformed businesses and pushed the boundaries of technology.
-          </p>
+          </motion.p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {projects.map((project) => (
-            <div key={project.id} className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+        <motion.div
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
+          {projects.map((project, index) => (
+            <motion.div
+              key={project.id}
+              className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300 }}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 + index * 0.1 }}
+            >
               <div className="p-6">
                 <div className="flex items-center justify-between mb-4">
                   <span className={`px-3 py-1 rounded-full text-sm font-medium ${
@@ -116,18 +139,23 @@ export default function Projects() {
                   ))}
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        <div className="text-center">
+        <motion.div
+          className="text-center"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+        >
           <Link
             href="/contact"
             className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors inline-block"
           >
             Start Your Project
           </Link>
-        </div>
+        </motion.div>
       </main>
     </div>
   );

@@ -1,6 +1,8 @@
+"use client"
 import Image from "next/image";
 import Link from "next/link";
 import { SITE_CONFIG } from "@/constants/site";
+import { motion } from "framer-motion";
 
 export default function Reviews() {
   const reviews = [
@@ -74,37 +76,69 @@ export default function Reviews() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
-
+    <div className="min-h-screen">
       {/* Reviews Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+          <motion.h1
+            className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6"
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
             Client Reviews
-          </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          </motion.h1>
+          <motion.p
+            className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
             {SITE_CONFIG.reviewsIntro}
-          </p>
+          </motion.p>
         </div>
 
         {/* Stats Section */}
-        <div className="grid md:grid-cols-4 gap-8 mb-16">
+        <motion.div
+          className="grid md:grid-cols-4 gap-8 mb-16"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
           {stats.map((stat, index) => (
-            <div key={index} className="text-center">
+            <motion.div
+              key={index}
+              className="text-center"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
               <div className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">
                 {stat.value}
               </div>
               <div className="text-gray-600 dark:text-gray-300">
                 {stat.label}
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Reviews Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {reviews.map((review) => (
-            <div key={review.id} className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+        <motion.div
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+        >
+          {reviews.map((review, index) => (
+            <motion.div
+              key={review.id}
+              className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300 }}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 + index * 0.1 }}
+            >
               <div className="flex items-center mb-4">
                 <Image
                   src={review.avatar}
@@ -127,7 +161,7 @@ export default function Reviews() {
               </div>
 
               <p className="text-gray-600 dark:text-gray-300 mb-4 italic">
-                "{review.review}"quot;{review.review}"{review.review}"quot;
+                &ldquo;{review.review}&rdquo;
               </p>
 
               <div className="border-t border-gray-200 dark:border-gray-700 pt-4">
@@ -135,18 +169,23 @@ export default function Reviews() {
                   Project: <span className="font-medium text-gray-700 dark:text-gray-300">{review.project}</span>
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        <div className="text-center">
+        <motion.div
+          className="text-center"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.0 }}
+        >
           <Link
             href="/contact"
             className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors inline-block"
           >
             Join Our Happy Clients
           </Link>
-        </div>
+        </motion.div>
       </main>
     </div>
   );

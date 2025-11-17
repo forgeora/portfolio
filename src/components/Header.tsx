@@ -26,13 +26,12 @@ export default function Header({ currentPage = '' }: HeaderProps) {
         <div className="flex justify-between items-center py-6">
           <div className="flex items-center">
             <Image
-              src="/logo.png"
+              src="/logo-header.png"
               alt={`${SITE_CONFIG.name} Logo`}
-              width={40}
-              height={40}
+              width={150}
+              height={100}
               className="mr-3"
             />
-            <span className="text-2xl font-bold text-gray-900 dark:text-white">{SITE_CONFIG.name}</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -42,6 +41,7 @@ export default function Header({ currentPage = '' }: HeaderProps) {
             <Link href="/services" className={`text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 ${currentPage === 'services' ? 'text-blue-600 dark:text-blue-400' : ''}`}>Services</Link>
             <Link href="/projects" className={`text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 ${currentPage === 'projects' ? 'text-blue-600 dark:text-blue-400' : ''}`}>Projects</Link>
             <Link href="/reviews" className={`text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 ${currentPage === 'reviews' ? 'text-blue-600 dark:text-blue-400' : ''}`}>Reviews</Link>
+            <Link href="/blog" className={`text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 ${currentPage === 'blog' ? 'text-blue-600 dark:text-blue-400' : ''}`}>Blog</Link>
             <Link href="/contact" className={`text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 ${currentPage === 'contact' ? 'text-blue-600 dark:text-blue-400' : ''}`}>Contact</Link>
           </nav>
 
@@ -96,6 +96,9 @@ export default function Header({ currentPage = '' }: HeaderProps) {
               >
                 Reviews
               </Link>
+            <Link href="/blog"  onClick={closeMobileMenu} className={`text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 ${currentPage === 'blog' ? 'text-blue-600 dark:text-blue-400' : ''}`}>
+            Blog
+            </Link>
               <Link
                 href="/contact"
                 onClick={closeMobileMenu}

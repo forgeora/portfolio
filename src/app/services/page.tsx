@@ -1,23 +1,43 @@
+"use client"
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function Services() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
-
+    <div className="min-h-screen">
       {/* Services Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+          <motion.h1
+            className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6"
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
             Our Services
-          </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          </motion.h1>
+          <motion.p
+            className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
             Comprehensive software solutions powered by AI, physics simulations, and cutting-edge technology.
-          </p>
+          </motion.p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+        <motion.div
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
+          <motion.div
+            className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 300 }}
+          >
             <Image
               src="/logo-ai.png"
               alt="AI Solutions"
@@ -35,9 +55,13 @@ export default function Services() {
               <li>• Computer Vision</li>
               <li>• Automated Decision Making</li>
             </ul>
-          </div>
+          </motion.div>
 
-          <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+          <motion.div
+            className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 300 }}
+          >
             <Image
               src="/logo-physics.png"
               alt="Physics Simulations"
@@ -55,9 +79,13 @@ export default function Services() {
               <li>• Structural Analysis</li>
               <li>• Virtual Reality Integration</li>
             </ul>
-          </div>
+          </motion.div>
 
-          <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+          <motion.div
+            className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 300 }}
+          >
             <Image
               src="/logo-white.png"
               alt="Custom Software"
@@ -75,9 +103,13 @@ export default function Services() {
               <li>• Enterprise Software</li>
               <li>• API Development</li>
             </ul>
-          </div>
+          </motion.div>
 
-          <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+          <motion.div
+            className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 300 }}
+          >
             <div className="bg-gradient-to-br from-purple-400 to-pink-400 rounded-full w-16 h-16 flex items-center justify-center mb-4">
               <span className="text-2xl">🔬</span>
             </div>
@@ -91,9 +123,13 @@ export default function Services() {
               <li>• Data Visualization</li>
               <li>• Business Intelligence</li>
             </ul>
-          </div>
+          </motion.div>
 
-          <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+          <motion.div
+            className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 300 }}
+          >
             <div className="bg-gradient-to-br from-green-400 to-blue-400 rounded-full w-16 h-16 flex items-center justify-center mb-4">
               <span className="text-2xl">☁️</span>
             </div>
@@ -107,9 +143,13 @@ export default function Services() {
               <li>• DevOps & CI/CD</li>
               <li>• Multi-cloud Strategies</li>
             </ul>
-          </div>
+          </motion.div>
 
-          <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+          <motion.div
+            className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 300 }}
+          >
             <div className="bg-gradient-to-br from-orange-400 to-red-400 rounded-full w-16 h-16 flex items-center justify-center mb-4">
               <span className="text-2xl">🔒</span>
             </div>
@@ -123,17 +163,22 @@ export default function Services() {
               <li>• Compliance Management</li>
               <li>• Security Audits</li>
             </ul>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        <div className="text-center">
+        <motion.div
+          className="text-center"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+        >
           <Link
             href="/contact"
             className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors inline-block"
           >
             Discuss Your Project
           </Link>
-        </div>
+        </motion.div>
       </main>
     </div>
   );
