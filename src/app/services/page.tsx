@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { TypeAnimation } from "react-type-animation";
 
 export default function Services() {
   return (
@@ -17,14 +18,26 @@ export default function Services() {
           >
             Our Services
           </motion.h1>
-          <motion.p
+          <motion.div
             className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Comprehensive software solutions powered by AI, physics simulations, and cutting-edge technology.
-          </motion.p>
+            <TypeAnimation
+              sequence={[
+                'Comprehensive software solutions',
+                2000,
+                'powered by AI, physics simulations',
+                2000,
+                'and cutting-edge technology.',
+                2000,
+              ]}
+              wrapper="span"
+              speed={50}
+              repeat={Infinity}
+            />
+          </motion.div>
         </div>
 
         <motion.div

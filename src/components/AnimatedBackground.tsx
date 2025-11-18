@@ -11,11 +11,11 @@ function FloatingParticles() {
 
   const positions = useMemo(() => {
     const pos: [number, number, number][] = [];
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 100; i++) {
       pos.push([
+        (Math.random() - 0.5) * 80,
+        (Math.random()- 0.5) * 60,
         (Math.random() - 0.5) * 60,
-        (Math.random()- 0.5) * 40,
-        (Math.random() - 0.5) * 40,
       ]);
     }
     return pos;
@@ -23,8 +23,9 @@ function FloatingParticles() {
 
   useFrame((state) => {
     if (meshRef.current) {
-      meshRef.current.rotation.x = Math.sin(state.clock.elapsedTime) * 0.1;
-      meshRef.current.rotation.y = Math.sin(state.clock.elapsedTime * 0.5) * 0.1;
+      meshRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.5) * 0.2;
+      meshRef.current.rotation.y = Math.sin(state.clock.elapsedTime * 0.3) * 0.2;
+      meshRef.current.rotation.z = Math.sin(state.clock.elapsedTime * 0.1) * 0.1;
     }
   });
 
@@ -32,8 +33,12 @@ function FloatingParticles() {
     <group ref={meshRef}>
       {positions.map((pos, i) => (
         <mesh key={i} position={pos}>
-          <sphereGeometry args={[0.1, 16, 16]} />
-          <meshStandardMaterial color="#3a6e9aff" emissive="#014e84ff" emissiveIntensity={0.2} />
+          <sphereGeometry args={[0.05 + Math.random() * 0.1, 8, 8]} />
+          <meshStandardMaterial
+            color={`hsl(${200 + Math.random() * 60}, 70%, 60%)`}
+            emissive={`hsl(${200 + Math.random() * 60}, 70%, 30%)`}
+            emissiveIntensity={0.1 + Math.random() * 0.2}
+          />
         </mesh>
       ))}
     </group>

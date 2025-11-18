@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { SITE_CONFIG } from "@/constants/site";
 import { motion } from "framer-motion";
+import { TypeAnimation } from "react-type-animation";
 
 export default function About() {
   return (
@@ -18,14 +19,26 @@ export default function About() {
           >
             About {SITE_CONFIG.name}
           </motion.h1>
-          <motion.p
+          <motion.div
             className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Pioneering the future of software innovation with expertise in AI, physics simulations, and cutting-edge technology solutions.
-          </motion.p>
+            <TypeAnimation
+              sequence={[
+                'Pioneering the future of software innovation',
+                2000,
+                'with expertise in AI, physics simulations',
+                2000,
+                'and cutting-edge technology solutions.',
+                2000,
+              ]}
+              wrapper="span"
+              speed={50}
+              repeat={Infinity}
+            />
+          </motion.div>
         </div>
 
         <motion.div
@@ -37,7 +50,7 @@ export default function About() {
           <div>
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">Our Mission</h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
-              {SITE_CONFIG.mission}
+              {SITE_CONFIG.aboutIntro}
             </p>
             <p className="text-lg text-gray-600 dark:text-gray-300">
               Our team of expert engineers and researchers combines deep technical knowledge with creative problem-solving to deliver software that not only meets today's needs but anticipates tomorrow's challenges.

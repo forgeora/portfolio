@@ -15,4 +15,9 @@ export const SITE_CONFIG = {
   reviewsIntro: "Don't just take our word for it. Here's what our clients have to say about working with Forgeora.",
   aboutIntro: "Learn more about our mission, vision, and the team behind Forgeora.",
   copyright: "© 2024 Forgeora. All rights reserved.",
+  socialLinks:{
+    linkedin: "https://www.linkedin.com/company/forgeora",
+    twitter: "https://twitter.com/forgeora",
+    github: "httpa://github.com/forgeora",
+  }
 };
