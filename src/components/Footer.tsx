@@ -63,7 +63,7 @@ export default function Footer() {
                 <FaTwitter className="text-xl text-blue-300" />
               </a>
               <a
-                href="#"
+                href={SITE_CONFIG.socialLinks.instagram}
                 className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/20 transition-all duration-300 hover:scale-110"
                 aria-label="Instagram"
               >
