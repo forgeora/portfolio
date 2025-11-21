@@ -18,6 +18,7 @@ export const SITE_CONFIG = {
   socialLinks:{
     linkedin: "https://www.linkedin.com/company/forgeora",
     twitter: "https://twitter.com/forgeora",
-    github: "httpa://github.com/forgeora",
+    github: "https://github.com/forgeora",
+    instagram : "https://www.instagram.com/forgeora",
   }
 };
