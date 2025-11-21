@@ -1,7 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
+import dbConnect from '../../../lib/mongodb';
+import Contact from '../../../models/Contact';
 
 export async function POST(request: NextRequest) {
   try {
+    await dbConnect();
+
     const { name, email, company, message } = await request.json();
 
     // Basic validation
@@ -21,20 +25,15 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Here you would typically send an email or save to database
-    // For now, we'll just log the data and return success
-    console.log('Contact form submission:', {
+    // Save to database
+    const contact = new Contact({
       name,
       email,
       company,
       message,
-      timestamp: new Date().toISOString(),
     });
 
-    // In a real application, you might:
-    // 1. Send email using nodemailer or a service like SendGrid
-    // 2. Save to database
-    // 3. Send confirmation email to user
+    await contact.save();
 
     return NextResponse.json(
       { message: 'Thank you for your message! We\'ll get back to you soon.' },
