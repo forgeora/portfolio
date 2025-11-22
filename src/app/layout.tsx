@@ -21,7 +21,14 @@ export const metadata: Metadata = {
   description: SITE_CONFIG.description,
   keywords: SITE_CONFIG.keywords,
   authors: SITE_CONFIG.authors,
+  creator: SITE_CONFIG.creator,
+  publisher: SITE_CONFIG.publisher,
+  robots: SITE_CONFIG.robots,
+  alternates: {
+    canonical: SITE_CONFIG.canonical,
+  },
   openGraph: SITE_CONFIG.openGraph,
+  twitter: SITE_CONFIG.twitter,
 };
 
 export default function RootLayout({
