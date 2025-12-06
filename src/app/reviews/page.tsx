@@ -8,30 +8,30 @@ export default function Reviews() {
   const reviews = [
     {
       id: 1,
-      name: "Sarah Johnson",
+      name: "John Geronimo",
       position: "CTO, TechCorp Industries",
       company: "TechCorp Industries",
-      avatar: "/logo-ai.png",
+      avatar: "/john-geronimo.jpg",
       rating: 5,
       review: "Forgeora's AI analytics platform transformed our decision-making process. The predictive insights have helped us increase efficiency by 40% and reduce operational costs significantly. Their team's expertise in machine learning is unmatched.",
       project: "AI Analytics Platform"
     },
     {
       id: 2,
-      name: "Michael Chen",
+      name: "Mike Johnson",
       position: "Engineering Director, GameDev Studios",
       company: "GameDev Studios",
-      avatar: "/logo-physics.png",
-      rating: 5,
+      avatar: "/mike-johnson.jpg",
+      rating: 4,
       review: "The physics simulation engine Forgeora developed for our game is incredible. The accuracy and performance exceeded our expectations. Our players love the realistic physics, and it has set us apart from competitors.",
       project: "Physics Simulation Engine"
     },
     {
       id: 3,
-      name: "Emily Rodriguez",
+      name: "Kadam Sone",
       position: "Operations Manager, Manufacturing Plus",
       company: "Manufacturing Plus",
-      avatar: "/logo-white.png",
+      avatar: "/kadam-sone.jpg",
       rating: 5,
       review: "Forgeora's ERP system streamlined our entire manufacturing process. The custom integrations and user-friendly interface have made our daily operations so much smoother. Highly recommend their services!",
       project: "ERP System"
@@ -41,7 +41,7 @@ export default function Reviews() {
       name: "David Kim",
       position: "CEO, SmartCity Solutions",
       company: "SmartCity Solutions",
-      avatar: "/logo-ai.png",
+      avatar: "/david-kim.jpeg",
       rating: 5,
       review: "Working with Forgeora on our IoT platform was a game-changer. Their understanding of complex systems and ability to deliver scalable solutions is impressive. The platform is now managing thousands of sensors city-wide.",
       project: "IoT Smart City Platform"
@@ -51,7 +51,7 @@ export default function Reviews() {
       name: "Lisa Thompson",
       position: "Supply Chain Director, Global Foods",
       company: "Global Foods",
-      avatar: "/logo-physics.png",
+      avatar: "/lisa-thompson.jpeg",
       rating: 5,
       review: "The blockchain supply chain tracker has brought unprecedented transparency to our operations. Our customers can now trace products from farm to table, building trust and ensuring food safety. Excellent work!",
       project: "Blockchain Supply Chain"
@@ -61,8 +61,8 @@ export default function Reviews() {
       name: "Robert Martinez",
       position: "Training Manager, Industrial Safety Corp",
       company: "Industrial Safety Corp",
-      avatar: "/logo-white.png",
-      rating: 5,
+      avatar: "/robert-martinez.jpeg",
+      rating: 4,
       review: "Forgeora's AR/VR training platform has revolutionized our safety training programs. The immersive experience makes learning engaging and memorable. Our incident rates have dropped significantly since implementation.",
       project: "AR/VR Training Platform"
     }

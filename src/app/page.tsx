@@ -157,22 +157,22 @@ export default function Home() {
 
   const testimonials = [
     {
-      name: "John Doe",
+      name: "John Geronimo",
       company: "TechCorp",
       message: "Forgeora transformed our operations with their comprehensive software solutions. Highly recommend!",
-      avatar: "/logo-ai.png"
+      avatar: "/john-geronimo.jpg"
     },
     {
-      name: "Jane Smith",
+      name: "Kadam Sone",
       company: "InnovateLabs",
       message: "The full-stack development and cloud deployment services were exceptional for our research platform.",
-      avatar: "/logo-physics.png"
+      avatar: "/kadam-sone.jpg"
     },
     {
       name: "Mike Johnson",
       company: "DataDriven",
       message: "Outstanding service and cutting-edge technology. Our productivity increased by 40%.",
-      avatar: "/logo-ai.png"
+      avatar: "/mike-johnson.jpg"
     }
   ];
 
@@ -216,7 +216,7 @@ export default function Home() {
             />
           </motion.div>
           <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            className="flex flex-col sm:flex-row gap-8 justify-center mt-4"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -290,7 +290,7 @@ export default function Home() {
                 transition={{ duration: 0.8, delay: 2.2 + index * 0.1 }}
               >
                 <motion.div
-                  className="text-6xl mb-4"
+                  className="text-6xl mb-4 flex justify-center"
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.6 }}
                 >

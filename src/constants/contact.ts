@@ -1,5 +1,5 @@
 export const CONTACT_INFO = {
-  email: "info@forgeora.com",
+  email: "forgeora@gmail.com",
   phone: "+91 8953524501",
   address: {
     street: "143 Civil Lines Road",

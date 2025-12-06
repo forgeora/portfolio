@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -9,7 +9,7 @@ interface HeaderProps {
   currentPage?: string;
 }
 
-export default function Header({ currentPage = '' }: HeaderProps) {
+export default function Header({ currentPage = "" }: HeaderProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -36,13 +36,72 @@ export default function Header({ currentPage = '' }: HeaderProps) {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            <Link href="/" className={`text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 ${currentPage === 'home' ? 'text-blue-600 dark:text-blue-400' : ''}`}>Home</Link>
-            <Link href="/about" className={`text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 ${currentPage === 'about' ? 'text-blue-600 dark:text-blue-400' : ''}`}>About</Link>
-            <Link href="/services" className={`text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 ${currentPage === 'services' ? 'text-blue-600 dark:text-blue-400' : ''}`}>Services</Link>
-            <Link href="/projects" className={`text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 ${currentPage === 'projects' ? 'text-blue-600 dark:text-blue-400' : ''}`}>Projects</Link>
-            <Link href="/reviews" className={`text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 ${currentPage === 'reviews' ? 'text-blue-600 dark:text-blue-400' : ''}`}>Reviews</Link>
-            <Link href="/blog" className={`text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 ${currentPage === 'blog' ? 'text-blue-600 dark:text-blue-400' : ''}`}>Blog</Link>
-            <Link href="/contact" className={`text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 ${currentPage === 'contact' ? 'text-blue-600 dark:text-blue-400' : ''}`}>Contact</Link>
+            <Link
+              href="/"
+              className={`text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 ${
+                currentPage === "home" ? "text-blue-600 dark:text-blue-400" : ""
+              }`}
+            >
+              Home
+            </Link>
+            <Link
+              href="/about"
+              className={`text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 ${
+                currentPage === "about"
+                  ? "text-blue-600 dark:text-blue-400"
+                  : ""
+              }`}
+            >
+              About
+            </Link>
+            <Link
+              href="/services"
+              className={`text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 ${
+                currentPage === "services"
+                  ? "text-blue-600 dark:text-blue-400"
+                  : ""
+              }`}
+            >
+              Services
+            </Link>
+            <Link
+              href="/projects"
+              className={`text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 ${
+                currentPage === "projects"
+                  ? "text-blue-600 dark:text-blue-400"
+                  : ""
+              }`}
+            >
+              Projects
+            </Link>
+            <Link
+              href="/reviews"
+              className={`text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 ${
+                currentPage === "reviews"
+                  ? "text-blue-600 dark:text-blue-400"
+                  : ""
+              }`}
+            >
+              Reviews
+            </Link>
+            <Link
+              href="/blog"
+              className={`text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 ${
+                currentPage === "blog" ? "text-blue-600 dark:text-blue-400" : ""
+              }`}
+            >
+              Blog
+            </Link>
+            <Link
+              href="/contact"
+              className={`text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 ${
+                currentPage === "contact"
+                  ? "text-blue-600 dark:text-blue-400"
+                  : ""
+              }`}
+            >
+              Contact
+            </Link>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -51,8 +110,22 @@ export default function Header({ currentPage = '' }: HeaderProps) {
             className="md:hidden p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
             aria-label="Toggle mobile menu"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={isMobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d={
+                  isMobileMenuOpen
+                    ? "M6 18L18 6M6 6l12 12"
+                    : "M4 6h16M4 12h16M4 18h16"
+                }
+              />
             </svg>
           </button>
         </div>
@@ -64,45 +137,77 @@ export default function Header({ currentPage = '' }: HeaderProps) {
               <Link
                 href="/"
                 onClick={closeMobileMenu}
-                className={`block px-3 py-2 rounded-md text-base font-medium ${currentPage === 'home' ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900' : 'text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400'}`}
+                className={`block px-3 py-2 rounded-md text-base font-medium ${
+                  currentPage === "home"
+                    ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900"
+                    : "text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400"
+                }`}
               >
                 Home
               </Link>
               <Link
                 href="/about"
                 onClick={closeMobileMenu}
-                className={`block px-3 py-2 rounded-md text-base font-medium ${currentPage === 'about' ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900' : 'text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400'}`}
+                className={`block px-3 py-2 rounded-md text-base font-medium ${
+                  currentPage === "about"
+                    ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900"
+                    : "text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400"
+                }`}
               >
                 About
               </Link>
               <Link
                 href="/services"
                 onClick={closeMobileMenu}
-                className={`block px-3 py-2 rounded-md text-base font-medium ${currentPage === 'services' ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900' : 'text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400'}`}
+                className={`block px-3 py-2 rounded-md text-base font-medium ${
+                  currentPage === "services"
+                    ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900"
+                    : "text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400"
+                }`}
               >
                 Services
               </Link>
               <Link
                 href="/projects"
                 onClick={closeMobileMenu}
-                className={`block px-3 py-2 rounded-md text-base font-medium ${currentPage === 'projects' ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900' : 'text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400'}`}
+                className={`block px-3 py-2 rounded-md text-base font-medium ${
+                  currentPage === "projects"
+                    ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900"
+                    : "text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400"
+                }`}
               >
                 Projects
               </Link>
               <Link
                 href="/reviews"
                 onClick={closeMobileMenu}
-                className={`block px-3 py-2 rounded-md text-base font-medium ${currentPage === 'reviews' ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900' : 'text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400'}`}
+                className={`block px-3 py-2 rounded-md text-base font-medium ${
+                  currentPage === "reviews"
+                    ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900"
+                    : "text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400"
+                }`}
               >
                 Reviews
               </Link>
-            <Link href="/blog"  onClick={closeMobileMenu} className={`text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 ${currentPage === 'blog' ? 'text-blue-600 dark:text-blue-400' : ''}`}>
-            Blog
-            </Link>
+              <Link
+                href="/blog"
+                onClick={closeMobileMenu}
+                className={`block px-3 py-2 rounded-md text-base font-medium ${
+                  currentPage === "blog"
+                    ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900"
+                    : "text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400"
+                }`}
+              >
+                Blog
+              </Link>
               <Link
                 href="/contact"
                 onClick={closeMobileMenu}
-                className={`block px-3 py-2 rounded-md text-base font-medium ${currentPage === 'contact' ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900' : 'text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400'}`}
+                className={`block px-3 py-2 rounded-md text-base font-medium ${
+                  currentPage === "contact"
+                    ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900"
+                    : "text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400"
+                }`}
               >
                 Contact
               </Link>
